@@ -52,3 +52,16 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2019-11-06 13:56:53
+
+
+use database_arm;
+
+CREATE TABLE `li_ajax_control_load` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `titulo` varchar(250) NOT NULL,
+  `angulo` text NOT NULL,
+  `ordem_no` int(11) NOT NULL,
+  `status` int(11) NOT NULL,
+   PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+ 
