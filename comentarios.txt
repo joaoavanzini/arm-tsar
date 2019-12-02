@@ -1,0 +1,22 @@
+ARDUINO
+
+linhas
+
+01 - incluir a biblioteca
+03 - 06 - definir objetos
+08 - 12 - definir posicao inicial
+14 - cria uma variável string
+15 - cria var char
+16 - cria var char com array
+18 - 25 - inicializa a comunicação serial, e define as portas, min e max mov
+30 - adiciona a string que pegar na comunicação serial dentro de _mover
+31 - mover na posição 0 = mover
+32 - mover na posição 2 = _posicao
+34 - transforma _posicao em posicoes iniciais de todos os objetos
+
+faz os ifs'
+
+PYTHON
+
+{path}\python.exe -m pip install mysql-connector-python
+{path}\python.exe -m pip install pyserial
