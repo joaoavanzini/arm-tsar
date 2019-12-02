@@ -50,7 +50,38 @@
             $('#myModal').modal('show');
         });
       </script><?php
-    }
+      print_r($angles);
+      $port = "COM3";
+      
+      exec("MODE $port BAUD=9600 PARITY=n DATA=8 XON=on STOP=1");
+      $fp = fopen($port, 'w+');
+      fwrite($fp, "q-".$angles['attack']);
+      fclose($fp);
+      sleep(1);
+
+      exec("MODE $port BAUD=9600 PARITY=n DATA=8 XON=on STOP=1");
+      $fp = fopen($port, 'w+');
+      fwrite($fp, "w-".$angles['elevator']);
+      fclose($fp);
+      sleep(1);
+
+      exec("MODE $port BAUD=9600 PARITY=n DATA=8 XON=on STOP=1");
+      $fp = fopen($port, 'w+');
+      fwrite($fp, "r-".$angles['body']);
+      fclose($fp);
+      sleep(1);
+
+      exec("MODE $port BAUD=9600 PARITY=n DATA=8 XON=on STOP=1");
+      $fp = fopen($port, 'w+');
+      if ($angles['claw'] == "open"){
+          fwrite($fp, "e-120");
+      }elseif($angles['claw'] == "close"){
+          fwrite($fp, "e-65");
+      }
+      fclose($fp);
+      sleep(1);
+   }
+
 ?>
 
 
